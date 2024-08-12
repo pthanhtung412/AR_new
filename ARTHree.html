@@ -1,0 +1,144 @@
+@{
+    Layout = null;
+}
+@using FFPRRole.Common;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        body {
+			margin: 0;
+			background-color: #000;
+			color: #fff;
+			font-family: Monospace;
+			font-size: 13px;
+			line-height: 24px;
+			overscroll-behavior: none;
+		}
+
+		a {
+			color: #ff0;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		button {
+			cursor: pointer;
+			text-transform: uppercase;
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+			text-align: center;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			pointer-events: none;
+			z-index: 1; /* TODO Solve this in HTML */
+		}
+
+		a, button, input, select {
+			pointer-events: auto;
+		}
+
+		.lil-gui {
+			z-index: 2 !important; /* TODO Solve this in HTML */
+		}
+
+
+
+		#overlay {
+			position: absolute;
+			font-size: 16px;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background: rgba(0,0,0,0.7);
+		}
+
+			#overlay button {
+				background: transparent;
+				border: 0;
+				border: 1px solid rgb(255, 255, 255);
+				border-radius: 4px;
+				color: #ffffff;
+				padding: 12px 18px;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+
+		#notSupported {
+			width: 50%;
+			margin: auto;
+			background-color: #f00;
+			margin-top: 20px;
+			padding: 10px;
+		}
+
+    </style>
+    <title>AR</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs97jQ_wrhyL7IVfjTLFPIBZVGh6xlyQ0&sensor=false&language=ja&libraries=geometry" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.17.custom.min.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.17.custom.min.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.qtip-1.0.0.min.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.openwin.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.alerts.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.antiForgery.js")@FFCommons.GetVerHref()" type="text/javascript"></script>
+
+
+
+    <script type="importmap">
+        {
+          "imports": {
+           "three": "/scripts/threejs/three.module.js"
+          }
+        }
+    </script>
+    <script type="module" src="~/Scripts/threejs/ARThree-webXR.js"></script>
+    @*<script type="module" src="~/Scripts/threejs/ARFF-webXR.js"></script>
+    *@@*<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.js"></script>*@
+    @*<script type="module" src="~/Scripts/threejs/OrbitControls.js"></script>*@
+    @*<script  src='~/Scripts/ar-threex-location-only.js'></script>*@
+
+
+    @*<script src="~/Scripts/threejs/three.js"></script>
+        <script src="~/Scripts/threejs/three.min.js"></script>
+        <script src='~/Scripts/threejs/ar-threex-location-only.js'></script>
+        <script src="~/Scripts/ARThree.js"></script>*@
+</head>
+<body>
+
+    @*<script src="~/Scripts/threejs/ARFF.js"></script>*@
+    @*<script type="module" src="~/Scripts/threejs/ARFF-webXR.js"></script>*@
+    @* <video id='video1' autoplay playsinline style='display:none'></video>
+        <canvas id="canvas1" style='background-color: black; width:100%; height:100%; display:block'></canvas>
+        <div id="container"></div>
+        <a style="position: absolute; z-index: 9999; width: 260px; height: 35px; top: 20px; left: 20px; font-size: 15px; align-items: center; display: flex;"><b style="color:red;">範囲:</b> <input id="distanceScale" type="range" min="1" max="200" value="100" onchange="UpdateDistanceCheckTatekanban(this)">&ensp;<span id="disttanceScaleSize">100</span><span>メートル</span></a>
+        <a id="btnCusttormSize" style="position: absolute; z-index: 9999; width: 260px; height: 35px; top: 80px; left: 20px; font-size: 15px; align-items: center; display: none;"><b style="color:red;">拡大率:</b> <input id="distanceScale" type="range" min="0.1" max="2" value="1" step="0.1" onchange="UpdateSizeTatekanban(this)">&ensp;<span id="modeScaleSize">1</span></a>*@
+</body>
+</html>
